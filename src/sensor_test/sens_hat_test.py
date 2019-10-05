@@ -6,12 +6,16 @@ from time import sleep
 from sense_hat import SenseHat
 
 if __name__ == '__main__':
-	sense = SenseHat()
+    sense = SenseHat()
 	
-	#sense.show_message("Hello world!")
+    #sense.show_message("Hello world!")
+    
+    while True:
+        print("humidity: %s %%rH" % sense.humidity)
+        print("pressure: %s Millibars" % sense.pressure)
+        print("temperature: %s C" % sense.temperature)
+        print("temperature: %s C" % sense.get_temperature_from_pressure())
+        print("")
 
-	print("humidity: %s %%rH" % sense.humidity)
-	print("pressure: %s Millibars" % sense.pressure)
-	print("temperature: %s C" % sense.temperature)
-	print("temperature: %s C" % sense.get_temperature_from_pressure())
+        time.sleep(1)
 	
